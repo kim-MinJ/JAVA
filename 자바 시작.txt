@@ -1,0 +1,21 @@
+gitignore 사이트(git에 있음)
+에서 입력값 입력하고 나온거 .ignore(txt말고 전체 파일로 변경)
+java_workspace 안에 넣어두기
+
+java17 받고 (카톡창에 있음)
+컴퓨터 설정- 시스템 속성- 환경 변수 - 시스템변수에서  새로만들기 JAVA_HOME으로 이름만들고 값은
+c드라이브에 있는 java-jdk 파일 경로 넣기
+
+* java+workspace 를 github 에 연결할 때
+java_workspace 에서 besh 열고
+git init => git add * => git commit -m "day01" => git remote add origin 깃허브리포지토리 주소
+
+
+javaworkspace vs코드로 열고 확장팩 설치
+extension 설치하면 자바 관련 확장팩 같이 설치됨
+
+그 이후는 1.md 따라하기
+그 이후에 평소처럼 좌측 상단x 좌측 하단java projects 위주로 운영
+
+run은 main에 붙어있음
+(안나오면 우측 상단에 화살표 모양 클릭하면 run)
