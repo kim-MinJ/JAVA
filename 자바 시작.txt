@@ -19,3 +19,11 @@ extension 설치하면 자바 관련 확장팩 같이 설치됨
 
 run은 main에 붙어있음
 (안나오면 우측 상단에 화살표 모양 클릭하면 run)
+
+설정에서 editor:format on save 체크
+editor:default formattor : project manager for java
+
+확장팩에서 colonize설치(; 알아서 만들어줌)
+
+단축키 main누르면 기본형 public 나옴
+

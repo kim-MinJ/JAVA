@@ -31,7 +31,7 @@ public static void main(String[] args) {
     //기본(원형primitive) 타입으로 데이터를 stack 에 저장합니다.
 
     //자바에서는 Byte, Short, Integer, Long, Float, Double, Character, Boolean (첫글자 대문자면 Class로 바뀜)
-    //기본 데이터 타입을 객체로 다룰 수 있는 wrapper 클래스가 있습니다.
+    //기본 데이터 타입을 객체로 다룰 수 있는 'wrapper 클래스'가 있습니다.
 
     
 }

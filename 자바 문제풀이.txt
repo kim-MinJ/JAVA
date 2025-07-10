@@ -1,0 +1,38 @@
+7.10 문제
+
+1. 2 대문자는 참조
+
+2. 
+Hello
+Hello
+
+답: true
+false
+해설 :  == 는 같은지 아닌지를 물어보기에 boolrean처리가 된다. str1 과 str2는 값이 같기에 같은 객체지만 str3은 new String을 해주었기에 다른 객체이다.
+
+3. 
+클래스 person의 기본 참조값에서 p1과 p2 를 새로운 객체를 만들어서 참조값이 변하였지만 p3는 p1을 가져왔다.
+하지만 새로운 객체를 만들어도 내부에 변수가 변한 것이 아니기에 모두 같다.
+
+4. class Student {
+    private String name;
+    private int age;
+    
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+toString(
+    // toString() 메소드를 여기에 작성
+}
+
+5. 3
+
+6. 
+
+7. 128 한계값이라는 이야기가 없어서 단순히 +1
+
+8. int x=10 이라는 정보는 {}안에서 끝나기떄문에 println할 x를 찾지 못한다.
+
+9. 
