@@ -12,6 +12,8 @@ public class W02Calculator {
         while (status) {
             String temp = System.console().readLine("첫번째 값");
             data1 = Integer.valueOf(temp);
+            String temp2 = System.console().readLine("두번째 값");
+            data2 = Integer.valueOf(temp2);
             op = System.console().readLine("연산 선택하기 (+, -, *, /) | 종료는 N 또는 n 입력 >>>");
             switch (op) {
                 case "+":
@@ -37,8 +39,6 @@ public class W02Calculator {
                     System.out.println("잘못된 선택 입니다. +, -, *, / 값만 사용합니다.");
                     break;
             }
-            String temp2 = System.console().readLine("두번째 값");
-            data2 = Integer.valueOf(temp2);
 
             System.out.println(
                     "결과값 : " + MyCalculator.qus1(data1) + String.valueOf(op) + MyCalculator.qus2(data2));
