@@ -15,7 +15,15 @@ public class B26ExceptionTest {
             System.out.println("프로그램 종료합니다. 모든 자원을 해제합니다.");
             // XXXX.close()
         }
+
+        // 0으로 나누는 예외 테스트
+        test.divide(23, 0); // java.lang.ArithmeticException: /by zero
     }
+
+    public void divide(int a, int b) {
+        System.out.println(a / b);
+    }
+
     /*
      * 아래 3개의 메소드를 실행하면 Exception 이 발생하도록 합니다.
      * 예외(Exception) : 프로그램 실행이 비정상적인 상황을 만나서 프로그램이 비정상적 종료

@@ -19,11 +19,14 @@ public class W03Test {
         /*
          * 3.
          * 2번
+         * 
+         * 3번은 실제로 나오려면 names.length가 아니라 names[0].length를 찍어야한다.
+         * 그러면 5가 나옴 ※"Alice"의 length
          */
 
         /*
          * 4.
-         * 1번?2번? 일단 2번
+         * 2번
          */
 
         /*
@@ -39,6 +42,7 @@ public class W03Test {
          * }
          * 빈칸 1 : length
          * 빈칸 2 : null
+         * ※ 기본 자료형의 기본값 String : null int, double:0, boolean:false
          */
 
         /*
