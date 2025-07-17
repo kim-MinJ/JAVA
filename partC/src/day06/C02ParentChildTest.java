@@ -41,7 +41,7 @@ class YourChild extends YourParent { // 부모가 물려준 메소드를 재정�
 
     @Override
     public void setName(String name) {
-        this.name = "👩 " + name;
+        this.name = "👩 " + name; // super.name = "👩 " + name; 이 더 정확한 표현
     }
 }
 

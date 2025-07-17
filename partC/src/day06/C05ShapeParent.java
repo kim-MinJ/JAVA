@@ -2,18 +2,49 @@ package day06;
 
 public class C05ShapeParent {
     public static void main(String[] args) {
-        ShapeParent rec = new Rectangle(10, 10, 220, 190, "yellow");
-        ShapeParent cir = new Circle(10, 20, 0, 0, "blue");
-        ShapeParent tri = new Triangle(50, 100, 400, 500, "orange");
+        ShapeParent s1 = new Rectangle(10, 10, 220, 190, "yellow");
+        ShapeParent s2 = new Circle(10, 20, 0, 0, "blue");
+        ShapeParent s3 = new Triangle(50, 100, 400, 500, "orange");
 
-        System.out.println(rec.getId());
+        // 부모 클래스로 객체 생성 가능
+        ShapeParent s4 = new ShapeParent(); // 너무 추상적인 객체
+        // 너무 추상적인 객체 => 부모클래스는 객체 못함.
 
-        System.out.println(cir.getId());
-        System.out.println(tri.getId());
+        System.out.println(s1.getId());
+        System.out.println(s2.getId());
+        System.out.println(s3.getId());
 
-        rec.draw();
-        cir.draw();
-        tri.draw();
+        s1.draw();
+        s2.draw();
+        s3.draw();
+
+        // 자식클래스는 다른 객체를 만듭니다. 이 다른 객체를 부모 타입으로 참조했을 때
+        // 실체 타입 검사 : instanceof 연산자
+
+        System.out.println("rec instanceof Rectangle : " + (s1 instanceof Rectangle)); // true
+        System.out.println("rec instanceof Triangle : " + (s1 instanceof Triangle)); // false
+        System.out.println("rec instanceof Circle : " + (s1 instanceof Circle)); // false
+
+        // 사용할 모든 도형을 배열 자료구조에 저장하기 (예시)
+        ShapeParent[] shapes = new ShapeParent[] { s1, s2, null, s3, null }; // 맨처음 초기화할때만 {s1, s2, null, s3, null} 가능
+        // shapes[0] = s1;
+
+        // 모든 도형 중에 'Circle'만 반지름을 지정해서 그리기 : Circle 클래스는 radius 정의.
+        for (ShapeParent sh : shapes) { // sh = shapes[i] (i값은 자동으로 증가)
+            if (sh instanceof Circle) { // null instanceof Circle 는 false 처리
+                System.out.println("원(circle)입니다. " + sh.toString());
+                // 🔥 setRadius 를 실행하기 위해 Circle 타입으로 캐스팅해야합니다.
+                // sh.setRadius 를 실행하기 위해 Circle 타입이지만 현재 참조는 부모 타입이므로 실행 못함.
+                Circle temp = (Circle) sh; // 부모타입 변수를 자식타입으로 참조 X.
+                temp.setRadius(40);
+                temp.draw();
+            } else {
+                System.out.println("기타 도형 입니다. " + sh); // sh.toString()은 NullpointerException 발생
+            }
+        }
+
+        // shapes 를 다시 새로운 배열로 대입할 때는 반드시 shapes = new ShpaeParente[]{s1, s2, null, s3,
+        // null}
 
         /*
          * 번외
@@ -113,7 +144,8 @@ class Rectangle extends ShapeParent { // <= 자식 클래스
       // 그렇기에 일반 생성자를 먼저 정의
 
     Rectangle(int posX, int posY, int width, int height, String color) {
-        super(posX, posY, width, height, color);
+        super(posX, posY, width, height, color); // 부모 클래스의 커스텀 생성자 호출
+        // 인자의 형식, 개수는 일치
     } // <= 이후에 커스텀 생성자를 정의
 
     @Override // <= Rectangle.draw에 모양 재정의 해둠.
