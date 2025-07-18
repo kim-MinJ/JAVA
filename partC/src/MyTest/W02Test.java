@@ -232,5 +232,7 @@ public class W02Test {
          * protected 접근 권한을 public 으로 변경할 수 있다. ( X )
          * 답 : O, X, X 정답 : O, X, O
          */
+
     }
 }
+

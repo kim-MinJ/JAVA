@@ -44,7 +44,7 @@ public class C13StringBuilder {
         System.out.println(str.contains(temp));
         System.out.println(str.replace(temp, "자바"));
 
-        // 🔥 StringBuilder 는 무자열 저장 가변객체를 생성합니다.
+        // 🔥 StringBuilder 는 문자열 저장 가변객체를 생성합니다.
         // 문자열을 변경하려면 append(), insert(), delete(), replace(), reverse() 실행합니다.
         // -> 리턴 타입이 StringBuilder 이므로 메소드를 체이닝 방식으로 작성할 수 있습니다.
         temp.append(" 자바").append(", ").append(10).replace(2, 4, "*");

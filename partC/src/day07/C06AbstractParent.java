@@ -44,7 +44,7 @@ abstract class Animal {
         this.id = id;
         this.name = name;
         this.color = color;
-    } //<= 커스텀 생성자
+    } // <= 커스텀 생성자
 
     @Override
     public String toString() {

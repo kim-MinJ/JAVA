@@ -57,7 +57,7 @@ class YourParent { // 밑의 내용은 private때문에 길어짐
     // Object 자바 클래스를 상속. toString() 재정의. 참조값이 아닌 속성값들 출력
     @Override
     public String toString() {
-        return String.format("%s %s (&d)", name, message, num);
+        return String.format("%s %s (%d)", name, message, num);
     }
 
     // getter and setter : 주의 class 가 default 일 때 메소드 public 의미 없음. default 로 동작

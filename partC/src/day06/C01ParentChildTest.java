@@ -28,7 +28,7 @@ class MyParent {
     int num; // String 이랑 int 속성
     String name;
 
-    MyParent() { // 상속자
+    MyParent() { // 생성자
         this.name = "UNKNOWN";
     }
 

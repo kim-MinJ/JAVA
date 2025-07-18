@@ -24,11 +24,13 @@ public class C12ProductProblem {
 
         System.out.println("Double 타입 실수 비교 : " + a.compareTo(b)); // -1
         System.out.println("Double 타입 실수 비교 : " + b.compareTo(a)); // 1
+        // 인스턴스 메서드(a,b에 값이 없으면 비교 못함)
 
         double c = 123.45;
         double d = 234.56;
         System.out.println("double 타입 실수 비교 : " + Double.compare(c, d));
         System.out.println("double 타입 실수 비교 : " + Double.compare(d, c));
+        // static 메서드(클래스 c,d 직접 호출)
 
         // 얕은 복사 확인을 위한 객체 생성과 전달
         Company c1 = new Company("LG 전자", "서울시 서초구");
@@ -98,6 +100,7 @@ class Product implements Comparable<Product>, Cloneable {
     public int compareTo(Product other) {
         // Product 객체 비교는 '가격'으로 한다.
         // return (int) (this.price - other.price); // 1안
+        // 1안 잘못된 int로 쓰면 소숫점만 다른 경우는 불가능 둘 다 0으로해서 제대로 인식못함
         return Double.compare(this.price, other.price); // 2안
         // return this.price.compareTo(other.price);
         // 3안) 단, private Double price; 로 변경해야 함.
