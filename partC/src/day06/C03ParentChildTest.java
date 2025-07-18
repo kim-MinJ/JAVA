@@ -15,7 +15,6 @@ public class C03ParentChildTest {
         // 새로운 자식2 객체 생성
         YourChild2 child22 = new YourChild2();
         System.out.println("message : " + child22.getMessage());
-
     }
 }
 

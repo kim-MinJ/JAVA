@@ -15,7 +15,7 @@ public class C13StringBuilder {
 
         // 각 str, sb 에 문자열 " 자바!!" 를 연결합니다.
         str += " 자바!!";
-        sb.append(" 자바!!");
+        sb.append(" 자바!!"); // append 메소드를 사용하여 연결
 
         System.out.println("String str : " + str);
         System.out.println("StringBuilder sb : " + sb);
@@ -38,5 +38,19 @@ public class C13StringBuilder {
         System.out.println(sb.isEmpty()); // default 메소드로 정의
         // 결론 : 🔥String, StringBuilder 는 CharSequence 인터페이스를 구현한 클래스이다.
 
+        // String 문자열 메소드는 인자 타입으로 CharSequence 것이 있습니다.
+        str = "Hello~ java, react";
+        StringBuilder temp = new StringBuilder("java");
+        System.out.println(str.contains(temp));
+        System.out.println(str.replace(temp, "자바"));
+
+        // 🔥 StringBuilder 는 무자열 저장 가변객체를 생성합니다.
+        // 문자열을 변경하려면 append(), insert(), delete(), replace(), reverse() 실행합니다.
+        // -> 리턴 타입이 StringBuilder 이므로 메소드를 체이닝 방식으로 작성할 수 있습니다.
+        temp.append(" 자바").append(", ").append(10).replace(2, 4, "*");
+        // va 문자열을 "*"로 치환
+        System.out.println(temp);
+
     }
+
 }
