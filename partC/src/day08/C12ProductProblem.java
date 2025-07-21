@@ -99,11 +99,14 @@ class Product implements Comparable<Product>, Cloneable {
     @Override
     public int compareTo(Product other) {
         // Product 객체 비교는 '가격'으로 한다.
-        // return (int) (this.price - other.price); // 1안
+        return (int) (this.price - other.price);
+        // 1안 42456.34 - 42456.12 과 42456.12 - 42456.34 를 강제로 int 로 변환하면 0
+        // => 2개가 같은 값 처리됨. 소수점 이하 자리 비교와 정확한 정렬 못함.
         // 1안 잘못된 int로 쓰면 소숫점만 다른 경우는 불가능 둘 다 0으로해서 제대로 인식못함
-        return Double.compare(this.price, other.price); // 2안
+        // return Double.compare(this.price, other.price); // 2안
         // return this.price.compareTo(other.price);
         // 3안) 단, private Double price; 로 변경해야 함.
+        // 2안 3안 만 가능
     }
 
     @Override

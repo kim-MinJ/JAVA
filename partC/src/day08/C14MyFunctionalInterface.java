@@ -49,10 +49,11 @@ public class C14MyFunctionalInterface {
  * 함수형 인터페이스를 '익명 클래스'로 구현할 때 주로 람다식(화살표 함수)을 사용을 합니다.
  * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㄴ 다른 메소드의 인자로 쓰입니다.
  * 
- * 자바에는
+ * 
  */
 interface ITestA {
     void testa(String messageString); // 인자 O , 리턴 X : Consumer(소비자)
+    // void testXXX(); // 오류 : why? @FunctionalInterface는 함수형 인터페이스에만 표시
 }
 
 interface ITestB {
