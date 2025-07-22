@@ -3,13 +3,13 @@ package day09;
 import java.util.ArrayList;
 import java.util.List;
 
-public class D05MemberManagerApp {
+public class D05MyMemberManagerApp {
     public static void main(String[] args) {
         List<Member> list = new ArrayList<>();
         System.out.println("회원 관리 프로그램입니다.");
         boolean status = true;
         while (status) {
-            System.out.println("\n작업 메뉴를 선택하세요.");
+            System.out.println("작업 메뉴를 선택하세요.");
             System.out.println("[A] 회원 추가  [R] 회원 삭제  [U] 회원 포인트 변경  [S] 회원 목록  [E] 종료");
             ;
             String menu = System.console().readLine("선택 >>> ");
@@ -33,10 +33,7 @@ public class D05MemberManagerApp {
                     }
                     break;
                 case "S":
-                    System.out.println("\t\t 회원 리스트. ");
-                    for (int i = 0; i < list.size(); i++) {
-
-                    }
+                    System.out.println("회원 목록입니다. " + list);
                     break;
                 case "E":
                     status = false;
@@ -49,18 +46,9 @@ public class D05MemberManagerApp {
         }
     }
 
-    // 프로그램 실행할 때 마다 4개의 객체를 리스트에 저장하고 시작
-    private static void initMemberList(List<Member> list) {
-        Member m1 = new Member(1, "김땡땡", 3.4);
-        Member m2 = new Member(2, "반하나", 1.9);
-        Member m3 = new Member(3, "최사과", 5.4);
-        Member m4 = new Member(4, "박모모", 6.3);
-
-        list.addAll()
-    }
-
     public static void addMember(List<Member> members) {
-       int id = 
+        String newmember = System.console().readLine("새로운 회원을 등록의 이름을 알려주세요.");
+        
 
     }
 }
