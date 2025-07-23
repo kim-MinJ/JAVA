@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ProductManagerApp {
     public static void main(String[] args) {
-        List<Product> list = new ArraysList<>();
+        List<Product> list = new ArrayList<>();
 
         initProductList(list);
         // list = initProductList(list); 1번 정답
@@ -41,9 +41,9 @@ public class ProductManagerApp {
                         break;
                     case "U":
                         index = Integer.parseInt((System.console().readLine("\t수정할 인덱스 입력 >>>>")));
-                        double p = Double.parseDouble(System.console().readLine("\t판매 가격 입력 >>> ")); // 4번 완
+                        double prc = Double.parseDouble(System.console().readLine("\t판매 가격 입력 >>> ")); // 4번 완
                         if (confirm("가격 변경")) {
-                            list.get(index).setPrice(p); // 5번 완
+                            list.get(index).setPrice(prc); // 5번 완
                             System.out.println("\t업데이트 결과 : " + list.get(index)); // 6번 완
                         } else {
                             System.out.println("\t가격 변경을 취소했습니다.");
@@ -87,12 +87,10 @@ public class ProductManagerApp {
              * Exception중에서 NumberFormatException을 사용하는 이유는
              * switch문에서 list에 없는 index 입력시 예외 잡아줌
              */
-        }
-    } // while end
+        } // while end
+    } // main end
 
-} // main end
-
-    private static List<Product> initProductList(List<Product> list) {
+    private static void initProductList(List<Product> list) {
         Product p1 = new Product(1212, "LG그램", 345600.0);
         Product p2 = new Product(2499, "LG스탠바이", 190100.0);
         Product p3 = new Product(1213, "삼성OLED", 554500.0);
@@ -107,13 +105,18 @@ public class ProductManagerApp {
     }
 
     private static void addProduct(List<Product> list) {
-        
-        double rnd = Math.random();
-        int pid = 
+        int pid = (int) (Math.random() * 8890) + 1110;
 
+        // for (int i = 0; i < 8888; i++) {
+        // double rnd = Math.random();
+        // pid = (int) (rnd * i) + 1;
+        // if (pid == ((int) (rnd * i) + 1111)) {
+        // break;
+        // }
+        // }
         // int pid = (int) (Math.random() * 9999) + 1;
         // if (pid < 1111)
-        //     pid = (int) (Math.random() * 9999) + 1;
+        // pid = (int) (Math.random() * 9999) + 1;
         // 못적음 13번 정답
         /*
          * pid에서 Math랜덤을 하면 1이하의 실수로 나오는데 이를 최댓값이 9999로
@@ -134,7 +137,9 @@ public class ProductManagerApp {
         }
     }
 
-private static boolean confirm(String task) {
-    String yn = System.console().readLine(task + " 을(를) 실행할까요? (확인:엔터, 취소:N) ");
-    return yn.length() != 0 && yn.toUpperCase().equals("N") ? false : true;
+    private static boolean confirm(String task) {
+        String yn = System.console().readLine(task + " 을(를) 실행할까요? (확인:엔터, 취소:N) ");
+        return yn.length() != 0 && yn.toUpperCase().equals("N") ? false : true;
+    }
+
 }
