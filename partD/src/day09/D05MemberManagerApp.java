@@ -6,41 +6,49 @@ import java.util.List;
 public class D05MemberManagerApp {
     public static void main(String[] args) {
         List<Member> list = new ArrayList<>();
+        // List<Member> 라는 변수타입을 가진 list 변수에 할당된 새로운 객체를 생성
         // list 초기화 메소드 실행
         initMemberList(list); // list 변수 참조값 전달
         System.out.println("회원 관리 프로그램입니다.");
-        boolean status = true;
-        while (status) {
+        boolean status = true; // while 문이 자동으로 반복하기 위해 선언
+        while (status) { // status의 값이 true이기에 반복할 수 있음
             System.out.println("\n작업 메뉴를 선택하세요.");
             System.out.println("[A] 회원 추가  [R] 회원 삭제  [U] 회원 포인트 변경  " +
                     "\n[S] 회원 목록  [N] 이름 조회  [E] 종료");
             ;
             String menu = System.console().readLine("선택 >>> ");
+            // menu에 readLine 입력값을 넣어줌
 
             // 인덱스, 회원 id 입력 : 잘못된 문자 입력하면 Integer.parseInt() 메소드 예외 생깁니다.
-            //단순 처리 : swich 문을 try 구문으로 묶어서 예외 발생하면 다시 반복 처음 메뉴 입력 실행하기
-            switch (menu.toUpperCase()) {
+            // 단순 처리 : swich 문을 try 구문으로 묶어서 예외 발생하면 다시 반복 처음 메뉴 입력 실행하기
+            switch (menu.toUpperCase()) { // menu에 넣어준걸 대문자로 전환후 그에 따라 다른 반응이 나오도록함
                 case "A":
                     addMember(list); // id, 이름 입력. point는 기본값 100
                     break;
                 case "N":
                     String find = System.console().readLine("조회할 이름 입력 >>>");
-                    int count = 0;
+                    // find에 입력한 이름값 넣어줌
+                    int count = 0; // 조회시 데이터가 있는지 없는지 if문을 사용하기 위해 생성
                     for (int i = 0; i < list.size(); i++) {
-                        Member m = list.get(i);
+                        Member m = list.get(i); // 해당하는 인덱스의 데이터값을 m에 저장
                         if (m.getName().contains(find)) {
-                            // 순서대로 인덱스 i 의 데이터 가져와서 getter 이름값이 contains(find)
+                            // 순서대로 인덱스 i 의 데이터 가져와서 getter 이름값이 contains(find)(입력값에 포함되어 있을 경우)
                             System.out.println(("\t" + i + ": " + m));
+                            // 출력값 = find한 인덱스 : id값+회원이름+포인트
                             count++;
+                            // if문으로 조회데이터가 없을 경우의 출력문이 나오지 않도록 하기 위해
                         }
                     }
                     if (count == 0)
                         System.out.println("\t조회 데이터가 없습니다.");
+                    // 위에 설정한 count값으로 나오도록 설정함. 위에 if문에 count++을 하지 않을 경우엔
+                    // 위에 if문에서도 count가 0이기에 같이 송출되어 count++을 해줘야함
                     break;
                 case "R":
                     int index = Integer.parseInt(System.console().readLine("삭제할 인덱스 입력 >>> "));
+                    // 입력값을 index에 저장
                     if (confirm("회원 삭제")) {
-                        Member m = list.remove(index);
+                        Member m = list.remove(index); // index를 기준으로 list에서 삭제(remove)
                         System.out.println("\t 삭제 데이터 확인 : " + m);
                     } else {
                         System.out.println("\t 삭제 취소합니다.");
@@ -86,6 +94,9 @@ public class D05MemberManagerApp {
 
         // 불변 객체 리스트가 메소드의 인자로 모든 요소를 가변 객체 list 에 모든 요소 추가
         list.addAll(List.of(m1, m2, m3, m4));
+        // 가장 위에 List<Member> list = new ArrayList<>(); 라는 가변 list를 만들어줌
+        // addAll()을 통해서 불변 리스트의 요소를 list라는 가변 리스트에 복사 및 추가
+        // 결론 : addAll() = 객체(요소 ex)m1, m2)들만 가변 리스트에 복사 List.of = 불변리스트 생성
     }
 
     public static void addMember(List<Member> list) {
