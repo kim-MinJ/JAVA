@@ -105,15 +105,8 @@ public class ProductManagerApp {
     }
 
     private static void addProduct(List<Product> list) {
-        int pid = (int) (Math.random() * 8890) + 1110;
+        int pid = (int) (Math.random() * 8889) + 1111;
 
-        // for (int i = 0; i < 8888; i++) {
-        // double rnd = Math.random();
-        // pid = (int) (rnd * i) + 1;
-        // if (pid == ((int) (rnd * i) + 1111)) {
-        // break;
-        // }
-        // }
         // int pid = (int) (Math.random() * 9999) + 1;
         // if (pid < 1111)
         // pid = (int) (Math.random() * 9999) + 1;

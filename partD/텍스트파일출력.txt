@@ -1,0 +1,12 @@
+PrintWrite는
+FileWriter
+또는
+파일명을
+인자로
+사용합니다.
+PrintWrite는
+FileWriter
+또는
+파일명을
+인자로
+사용합니다.
